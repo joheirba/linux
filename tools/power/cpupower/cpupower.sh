@@ -29,4 +29,10 @@ then
     cpupower set -e "$EPP" > /dev/null || ESTATUS=1
 fi
 
+# apply Turbo Boost option
+if test -n "$BOOST"
+then
+    cpupower set -t "$BOOST" > /dev/null || ESTATUS=1
+fi
+
 exit $ESTATUS
